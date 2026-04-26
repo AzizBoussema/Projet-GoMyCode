@@ -1,0 +1,6 @@
+export const LOAD_ORDER = "LOAD_ORDER";
+export const CREATE_ORDER = "CREATE_ORDER";
+export const GET_MY_ORDERS = "GET_MY_ORDERS";
+export const GET_VENDOR_ORDERS = "GET_VENDOR_ORDERS";
+export const UPDATE_ORDER_STATUS = "UPDATE_ORDER_STATUS";
+export const FAIL_ORDER = "FAIL_ORDER";

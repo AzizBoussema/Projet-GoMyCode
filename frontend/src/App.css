@@ -1,0 +1,39 @@
+﻿:root {
+  --page-bg: #faf7f2;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666;
+  --primary: #ff6b35;
+  --secondary: #f97316;
+  --accent: #dc2626;
+  --dark: #1e293b;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
