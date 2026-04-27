@@ -43,7 +43,7 @@ const FoodDetails = () => {
             Restaurant: {product.restaurantId?.businessName || product.restaurantId?.name}
           </p>
           <p className="lead">{product.description}</p>
-          <h3 className="text-success">{product.price} EUR</h3>
+          <h3 className="text-success">{product.price} DT</h3>
           <div className="mt-4">
             <button
               className="btn btn-success btn-lg me-3"

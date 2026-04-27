@@ -1,4 +1,5 @@
 import apiClient from "../api/axiosConfig";
+import { clearCart } from "./cart.actions";
 import {
   LOAD_ORDER,
   CREATE_ORDER,
@@ -8,16 +9,22 @@ import {
   FAIL_ORDER,
 } from "../actionType/order.actiontype";
 
-export const createOrder = (orderData, navigate) => async (dispatch) => {
+export const createOrder = (orderData, navigate, setIsOrdering, setShowModal) => async (dispatch) => {
   dispatch({ type: LOAD_ORDER });
   try {
     const result = await apiClient.post("/api/orders", orderData);
     dispatch({ type: CREATE_ORDER, payload: result.data.data });
-    navigate("/profile");
+    dispatch(clearCart());
+    if (setIsOrdering) setIsOrdering(false);
+    if (setShowModal) setShowModal(false);
+    navigate("/order-confirmed", { state: { order: result.data.data } });
   } catch (error) {
+    if (setIsOrdering) setIsOrdering(false);
+    alert(error.response?.data?.errors?.[0]?.msg || "Erreur lors de la création de la commande.");
     dispatch({ type: FAIL_ORDER, payload: error.response?.data });
   }
 };
+
 
 export const getMyOrders = () => async (dispatch) => {
   dispatch({ type: LOAD_ORDER });

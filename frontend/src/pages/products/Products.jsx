@@ -43,7 +43,7 @@ const Products = () => {
               </p>
 
               <div className="food-meta">
-                <span className="food-price">{product.price} EUR</span>
+                <span className="food-price">{product.price} DT</span>
                 <span className="food-restaurant">
                   {product.restaurantId?.businessName || product.restaurantId?.name || "Restaurant"}
                 </span>

@@ -65,7 +65,7 @@ const RestaurantMenu = () => {
                 <div className="card-body d-flex flex-column">
                   <div className="d-flex justify-content-between">
                     <h5 className="card-title fw-bold">{product.name}</h5>
-                    <span className="text-primary fw-bold">{product.price.toFixed(2)} EUR</span>
+                    <span className="text-primary fw-bold">{product.price.toFixed(2)} DT</span>
                   </div>
                   <p className="card-text text-muted small">
                     {product.description?.slice(0, 90) || "Description non disponible"}...

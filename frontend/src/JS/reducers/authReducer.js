@@ -5,6 +5,7 @@ import {
   LOGOUT_AUTH,
   SUCCESS_AUTH,
 } from "../actionType/auth.actiontype";
+import { UPDATE_MY_PROFILE } from "../actionType/users.actiontype";
 
 const initialState = {
   isLoad: false,
@@ -37,6 +38,13 @@ const authReducer = (state = initialState, { type, payload }) => {
         user: payload,
         errors: null,
         isAuth: true,
+      };
+    case UPDATE_MY_PROFILE:
+      return {
+        ...state,
+        isLoad: false,
+        user: payload,
+        errors: null,
       };
     case LOGOUT_AUTH:
       localStorage.removeItem("token");

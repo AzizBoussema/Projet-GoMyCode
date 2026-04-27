@@ -5,7 +5,7 @@ export const LOAD_USER = "LOAD_USER";
 export const GET_ALL_USERS = "GET_ALL_USERS";
 export const GET_ONE_USER = "GET_ONE_USER";
 export const DELETE_USER = "DELETE_USER";
-
+export const UPDATE_MY_PROFILE = "UPDATE_MY_PROFILE";
 
 //FAIL = Echec
 export const FAIL_USER = "FAIL_USER";

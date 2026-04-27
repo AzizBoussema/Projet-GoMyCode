@@ -54,7 +54,7 @@ const Dashboard = () => {
                       <div className="d-flex justify-content-between align-items-center">
                         <div>
                           <h6>{product.name}</h6>
-                          <p className="mb-1">{product.price} EUR</p>
+                          <p className="mb-1">{product.price} DT</p>
                           <small className={`badge ${product.status === "published" ? "bg-success" : "bg-warning"}`}>
                             {product.status}
                           </small>
@@ -95,7 +95,7 @@ const Dashboard = () => {
                         <div>
                           <h6>Commande #{order._id.slice(-6)}</h6>
                           <p className="mb-1">Client: {order.userId?.name}</p>
-                          <p className="mb-1">Total: {order.totalAmount} EUR</p>
+                          <p className="mb-1">Total: {order.totalAmount} DT</p>
                           <small className={`badge ${getStatusBadge(order.status)}`}>
                             {order.status}
                           </small>

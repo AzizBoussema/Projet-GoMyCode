@@ -155,7 +155,7 @@ orderSchema.index({ userId: 1, status: 1 });
 orderSchema.index({ createdAt: -1 });
 
 // Middleware pour calculer le montant automatiquement
-orderSchema.pre("save", function (next) {
+orderSchema.pre("save", function () {
   if (
     this.isModified("products") ||
     this.isModified("discount") ||
@@ -167,11 +167,10 @@ orderSchema.pre("save", function (next) {
     );
     this.totalAmount = productsTotal - this.discount + this.deliveryFee;
   }
-  next();
 });
 
 // Middleware pour gérer l'annulation
-orderSchema.pre("findByIdAndUpdate", function (next) {
+orderSchema.pre("findByIdAndUpdate", function () {
   if (
     this._update.status === "cancelled" &&
     !this._update.cancellationReason
@@ -180,7 +179,6 @@ orderSchema.pre("findByIdAndUpdate", function (next) {
       "La raison d'annulation est requise quand on annule une commande"
     );
   }
-  next();
 });
 
 const Order = mongoose.model("order", orderSchema);

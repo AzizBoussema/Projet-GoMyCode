@@ -1,0 +1,133 @@
+/* Order Confirmation Premium Design */
+
+.order-receipt-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.receipt-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  background: linear-gradient(180deg, rgba(234, 88, 12, 0.05) 0%, transparent 100%);
+  border-bottom: 2px dashed var(--border);
+  position: relative;
+}
+
+/* Les petits demi-cercles pour faire un bord de ticket de caisse */
+.receipt-header::after,
+.receipt-header::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--page-bg);
+  border-radius: 50%;
+  border-top: 1px solid var(--border);
+}
+
+.receipt-header::before {
+  left: -10px;
+  border-right: 1px solid var(--border);
+  transform: rotate(45deg);
+}
+
+.receipt-header::after {
+  right: -10px;
+  border-left: 1px solid var(--border);
+  transform: rotate(-45deg);
+}
+
+.success-checkmark-wrapper {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #10B981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+.checkmark-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.receipt-body {
+  padding: 2rem;
+}
+
+.order-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.info-value {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.pending-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+}
+
+.receipt-divider {
+  border-color: var(--border);
+  margin: 1.5rem 0;
+}
+
+.item-qty {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px !important;
+}
+
+.total-row {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--primary-light);
+}
+
+.receipt-footer {
+  padding: 0 2rem 2.5rem;
+  background: var(--card-bg);
+}
+
+/* Pour contrer .text-dark forcé en fallback si App.css ne s'applique pas au ticket clair */
+.order-receipt-card h2.text-dark {
+  color: var(--text) !important;
+}
+
+.badge.bg-light.text-dark {
+  color: #111827 !important;
+  /* Force black on light badge in dark mode */
+}

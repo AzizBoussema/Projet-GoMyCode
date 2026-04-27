@@ -42,7 +42,7 @@ const Restaurants = () => {
                   />
                   <div className="card-body">
                     <div className="d-flex justify-content-between align-items-center mb-2">
-                      <h5 className="card-title fw-bold text-dark m-0">{restaurant.name}</h5>
+                      <h5 className="card-title fw-bold m-0">{restaurant.name}</h5>
                       <span className="badge bg-warning text-dark"><i className="fa fa-star me-1"></i>{restaurant.rating}</span>
                     </div>
                     <p className="card-text text-secondary mb-3">{restaurant.description?.slice(0, 80)}...</p>

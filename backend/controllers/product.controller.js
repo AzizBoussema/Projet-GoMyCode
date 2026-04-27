@@ -116,6 +116,14 @@ exports.getProductById = async (req, res) => {
       return sendError(res, 404, "Produit introuvable.");
     }
 
+    // Si l'utilisateur est un vendeur, vérifier qu'il possède ce produit
+    if (req.user && req.user.role === "restaurant") {
+      const restaurant = await getVendorRestaurant(req.user._id);
+      if (!restaurant || product.restaurantId.toString() !== restaurant._id.toString()) {
+        return sendError(res, 403, "Vous ne pouvez accéder qu'à vos propres produits.");
+      }
+    }
+
     return res.status(200).json({
       success: true,
       data: product,

@@ -61,7 +61,7 @@ exports.createOrder = async (req, res) => {
       data: populatedOrder,
     });
   } catch (error) {
-    return sendError(res, 500, "Erreur lors de la creation de la commande.");
+    return sendError(res, 500, error.message || "Erreur lors de la creation de la commande.");
   }
 };
 
