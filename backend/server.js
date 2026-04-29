@@ -17,9 +17,11 @@ app.use("/api/users", require("./routes/user.route"));
 app.use("/api/restaurants", require("./routes/restaurant.route"));
 app.use("/api/products", require("./routes/product.route"));
 app.use("/api/orders", require("./routes/order.route"));
+app.use(cors());
 
+app.use((req, res) => res.send("API IS RUNNING"));
 // ---------SERVER--------
-const PORT = process.env.PORT || 7550;
+const PORT = process.env.PORT || 7500;
 app.listen(PORT, (err) => {
   err
     ? console.log(err)
