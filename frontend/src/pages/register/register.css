@@ -1,10 +1,13 @@
-﻿.register-page {
+.register-page {
   max-width: 540px;
   margin: 3rem auto 2rem;
   padding: 2rem;
-  background: #ffffff;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 1.3rem;
-  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .register-page h2 {

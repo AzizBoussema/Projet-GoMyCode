@@ -1,93 +1,90 @@
 /* ============================================
-   SAVORYX - PREMIUM THEME SYSTEM (Glassmorphism)
+   SAVORYX - FOOD DELIVERY PREMIUM UI 2026
    ============================================ */
 
 :root,
 [data-theme="light"] {
-  /* Premium Minimalist Light Palette */
-  --page-bg: #F9FAFB;
-  --surface: rgba(255, 255, 255, 0.65);
-  --surface-solid: #FFFFFF;
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --overlay-bg: rgba(0, 0, 0, 0.4);
+  /* Premium Light Palette - Chaleureux et Crème */
+  --page-bg: #f5f1ea;
+  /* Beige clair */
+  --surface: rgba(253, 246, 238, 0.7);
+  --surface-solid: #fdf6ee;
+  /* Crème */
+  --card-bg: #fdf6ee;
+  /* Crème (se détache du beige) */
+  --hero-glass-bg: rgba(255, 240, 230, 0.45);
+  /* Teinte orange très légère et transparente */
+  --overlay-bg: rgba(245, 241, 234, 0.85);
 
   /* Typography */
-  --text: #111827;
-  --text-secondary: #4B5563;
-  --text-muted: #6B7280;
-  --text-inverse: #FFFFFF;
+  --text: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #8a8a8a;
+  --text-inverse: #ffffff;
 
-  /* Brand Colors - High End Food Delivery */
-  --primary: #EA580C;
-  /* Tailwind Orange 600 */
-  --primary-hover: #C2410C;
-  --primary-light: #FDBA74;
-  --secondary: #0F172A;
-  --accent: #E11D48;
-  /* Premium Rose/Red */
+  /* Brand Colors - Food Delivery */
+  --primary: #ff6b35;
+  /* Orange chaud */
+  --primary-hover: #ff7a00;
+  --primary-light: #ffb088;
+  --secondary: #10b981;
+  /* Vert healthy/validation */
+  --accent: #fcd34d;
+  /* Jaune doux */
 
   /* Borders & Shadows */
-  --border: rgba(0, 0, 0, 0.08);
-  --border-focus: rgba(234, 88, 12, 0.4);
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  --shadow-glow: 0 0 20px rgba(234, 88, 12, 0.15);
-
-  /* Abstract Mesh Colors */
-  --mesh-1: rgba(253, 186, 116, 0.4);
-  --mesh-2: rgba(249, 115, 22, 0.15);
-  --mesh-3: rgba(225, 29, 72, 0.1);
-  --mesh-4: rgba(255, 255, 255, 0.8);
+  --border: rgba(0, 0, 0, 0.05);
+  --border-focus: rgba(255, 107, 53, 0.4);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 15px 35px rgba(255, 107, 53, 0.15);
+  --shadow-glow: 0 0 20px rgba(255, 107, 53, 0.25);
 }
 
 [data-theme="dark"] {
-  /* Premium Dark Palette */
-  --page-bg: #030712;
-  /* Tailwind Gray 950 */
-  --surface: rgba(17, 24, 39, 0.65);
-  --surface-solid: #111827;
-  --card-bg: rgba(31, 41, 55, 0.75);
-  --overlay-bg: rgba(0, 0, 0, 0.8);
+  /* Premium Dark Palette - Relief et Profondeur */
+  --page-bg: #121212;
+  /* Gris foncé (pas noir absolu) */
+  --surface: rgba(31, 31, 31, 0.65);
+  --surface-solid: #1f1f1f;
+  --card-bg: #1f1f1f;
+  /* Différent du fond pour le relief */
+  --hero-glass-bg: rgba(40, 25, 20, 0.5);
+  /* Teinte sombre chaude et transparente */
+  --overlay-bg: rgba(18, 18, 18, 0.9);
 
   /* Typography */
-  --text: #F9FAFB;
-  --text-secondary: #D1D5DB;
-  --text-muted: #9CA3AF;
-  --text-inverse: #030712;
+  --text: #f5f1ea;
+  --text-secondary: #b3b3b3;
+  --text-muted: #808080;
+  --text-inverse: #121212;
 
   /* Brand Colors */
-  --primary: #F97316;
-  /* Tailwind Orange 500 */
-  --primary-hover: #FB923C;
-  --primary-light: #C2410C;
-  --secondary: #F8FAFC;
-  --accent: #FB7185;
+  --primary: #ff6b35;
+  --primary-hover: #ff7a00;
+  --primary-light: #c2410c;
+  --secondary: #10b981;
+  --accent: #fcd34d;
 
   /* Borders & Shadows */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(249, 115, 22, 0.4);
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 20px rgba(249, 115, 22, 0.2);
-
-  /* Abstract Mesh Colors */
-  --mesh-1: rgba(249, 115, 22, 0.15);
-  --mesh-2: rgba(225, 29, 72, 0.12);
-  --mesh-3: rgba(124, 58, 237, 0.08);
-  /* Deep violet accent */
-  --mesh-4: rgba(3, 7, 18, 0.9);
+  --border: rgba(255, 255, 255, 0.05);
+  --border-focus: rgba(255, 107, 53, 0.5);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 15px 35px rgba(255, 107, 53, 0.2);
+  --shadow-glow: 0 0 25px rgba(255, 107, 53, 0.35);
 }
 
 /* ---------- BASE STYLES ---------- */
 body {
-  background-color: var(--page-bg);
+  background-color: transparent;
+  /* Permet de voir le AnimatedBackground (z-index: -1) situé derrière */
   color: var(--text);
   min-height: 100vh;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   transition: background-color 0.5s ease, color 0.3s ease;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -97,8 +94,9 @@ h4,
 h5,
 h6 {
   font-family: 'Outfit', 'Inter', system-ui, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
 }
 
 /* Custom Scrollbar for Premium Feel */
@@ -133,47 +131,91 @@ h6 {
   position: relative;
   z-index: 10;
   margin-top: 60px;
-  /* Space for fixed navbar */
 }
 
-/* Glassmorphism Utilities */
+/* ============================================
+   GLASSMORPHISM UTILITIES
+   ============================================ */
 .glass-panel {
   background: var(--card-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 20px;
+  /* Demandé: 12px à 20px */
   box-shadow: var(--shadow-md);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .glass-panel:hover {
   box-shadow: var(--shadow-lg);
   border-color: var(--border-focus);
+  transform: translateY(-4px) scale(1.01);
 }
 
-/* Premium Button Utility */
+/* ============================================
+   BUTTON UTILITIES 2026
+   ============================================ */
 .btn-premium {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
   color: #fff !important;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 2rem;
   border-radius: 9999px;
-  /* Pill */
-  font-weight: 600;
+  /* Pill shape */
+  font-weight: 700;
   font-family: 'Inter', sans-serif;
-  letter-spacing: 0.01em;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-glow);
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
 }
 
 .btn-premium:hover {
-  background: var(--primary-hover);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+  /* Glow / Hover Lumineux */
+}
+
+.btn-premium:hover::before {
+  opacity: 1;
+}
+
+.btn-secondary-premium {
+  background: var(--surface);
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary-premium:hover {
+  background: var(--card-bg);
+  border-color: var(--primary);
+  color: var(--primary) !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(234, 88, 12, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .text-gradient {
@@ -183,7 +225,6 @@ h6 {
   background-clip: text;
 }
 
-/* Surcharge sécurisée des classes Bootstrap */
 .text-muted {
   color: var(--text-muted) !important;
 }

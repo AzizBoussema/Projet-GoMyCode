@@ -29,14 +29,16 @@
 }
 
 .food-card {
-  background: #ffffff;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 1.5rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
+  border: 1px solid var(--border);
   cursor: pointer;
 }
 

@@ -2,8 +2,10 @@ import axios from "axios";
 import store from "../store/store";
 import { LOGOUT_AUTH } from "../actionType/auth.actiontype";
 
-// Créer une instance axios
-const apiClient = axios.create();
+// Créer une instance axios avec baseURL dynamique (Dev/Prod)
+const apiClient = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:7500",
+});
 
 // Interceptor pour ajouter le token à chaque requête
 apiClient.interceptors.request.use(

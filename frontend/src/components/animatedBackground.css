@@ -1,4 +1,4 @@
-/* Premium Immersive Background Styles */
+/* Premium Immersive Background Styles (Food Theme) */
 .fixed {
   position: fixed;
 }
@@ -22,63 +22,74 @@
   overflow: hidden;
 }
 
+.bg-base {
+  background: var(--page-bg);
+  transition: background 0.5s ease;
+}
+
 .premium-bg-image {
   position: absolute;
-  top: -15%;
-  /* Extra room for parallax scrolling without seeing edges */
-  left: -5%;
-  right: -5%;
-  bottom: -15%;
-  background-image: url('/bg-premium.png');
+  inset: -10%;
+  /* Extra room for zoom without seeing edges */
+  background-image: url('../assets/restaurant-bg.png');
+  /* High quality food layout */
   background-size: cover;
-  background-position: center 20%;
+  background-position: center;
   background-repeat: no-repeat;
   will-change: transform;
-
-  /* Very subtle Ken Burns slow zoom (GPU accelerated) */
-  animation: subtleZoom 25s ease-in-out infinite alternate;
+  filter: blur(2px) saturate(1.1);
+  /* Adjusted blur for the new image */
+  opacity: 0.9;
+  /* Adjust opacity */
+  animation: subtleZoom 35s ease-in-out infinite alternate;
 }
 
 @keyframes subtleZoom {
   0% {
-    transform: scale(1.0);
+    transform: scale(1.0) translate(0, 0);
   }
 
   100% {
-    transform: scale(1.08);
+    transform: scale(1.05) translate(-1%, -1%);
   }
 }
 
-/* Gradients that ensure readability while keeping the beautiful image partially visible */
+/* Gradients that ensure readability while keeping the food image partially visible */
 .premium-overlay {
   position: absolute;
   inset: 0;
   transition: background 0.5s ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
-/* Dark mode: Pitch dark fade starting quickly to preserve text contrast lower down */
+/* Dark mode: Deep slate fade to preserve contrast */
 .overlay-dark {
-  background:
-    linear-gradient(to bottom, rgba(3, 7, 18, 0.3) 0%, rgba(3, 7, 18, 0.85) 35%, rgba(3, 7, 18, 1) 90%),
-    radial-gradient(circle at center, transparent 0%, rgba(3, 7, 18, 0.6) 100%);
+  background: linear-gradient(135deg,
+      rgba(11, 15, 25, 0.3) 0%,
+      rgba(15, 23, 42, 0.2) 100%);
 }
 
-/* Light mode: Bright fade preserving the high-end feel */
+/* Light mode: Bright beige/off-white fade preserving the high-end feel */
 .overlay-light {
-  background:
-    linear-gradient(to bottom, rgba(249, 250, 251, 0.35) 0%, rgba(249, 250, 251, 0.9) 35%, rgba(249, 250, 251, 1) 90%),
-    radial-gradient(circle at center, transparent 0%, rgba(249, 250, 251, 0.5) 100%);
+  background: linear-gradient(135deg,
+      rgba(250, 249, 246, 0.4) 0%,
+      rgba(255, 255, 255, 0.3) 100%);
 }
 
 .noise-overlay {
   position: absolute;
   inset: 0;
-  opacity: 0.2;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  z-index: 1;
-  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
-[data-theme="dark"] .noise-overlay {
-  opacity: 0.06;
+@media (max-width: 768px) {
+  .premium-bg-image {
+    background-image: url('../assets/restaurant-bg.png');
+    filter: blur(2px) saturate(1.2);
+    /* More blur on mobile */
+  }
 }

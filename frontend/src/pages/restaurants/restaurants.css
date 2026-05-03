@@ -1,48 +1,65 @@
 .restaurant-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 20px; /* Demandé: 12px à 20px */
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border: 2px solid transparent;
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
 }
 
 .restaurant-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(255, 107, 53, 0.25);
-  border-color: rgba(255, 107, 53, 0.2);
+  transform: translateY(-8px) scale(1.03); /* Demandé: scale(1.03) */
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2), 0 0 0 1px var(--border-focus); /* Shadow plus forte */
+  border-color: transparent;
 }
 
 .restaurant-img {
   height: 220px;
   object-fit: cover;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: brightness(0.95);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+  filter: brightness(0.95) saturate(1.1);
+  border-bottom: 1px solid var(--border);
 }
 
 .restaurant-card:hover .restaurant-img {
-  transform: scale(1.1);
-  filter: brightness(1);
+  transform: scale(1.08);
+  filter: brightness(1.05) saturate(1.2);
 }
 
 .product-card {
-  border-radius: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 20px; /* Demandé: 12px à 20px */
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
+  cursor: pointer;
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
-  border-color: rgba(255, 107, 53, 0.2);
+  transform: translateY(-8px) scale(1.03); /* Demandé: scale(1.03) */
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2), 0 0 0 1px var(--border-focus); /* Shadow plus forte */
+  border-color: transparent;
 }
 
 .product-card img {
-  border-bottom: 3px solid #ff6b35;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  border-bottom: 2px solid var(--primary);
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
 }
 
 .restaurant-banner {
