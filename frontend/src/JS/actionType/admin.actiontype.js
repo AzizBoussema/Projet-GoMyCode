@@ -1,0 +1,13 @@
+export const LOAD_ADMIN          = "LOAD_ADMIN";
+export const FAIL_ADMIN          = "FAIL_ADMIN";
+
+// Users
+export const ADMIN_GET_USERS     = "ADMIN_GET_USERS";
+export const ADMIN_TOGGLE_USER   = "ADMIN_TOGGLE_USER";
+export const ADMIN_DELETE_USER   = "ADMIN_DELETE_USER";
+
+// Restaurants
+export const ADMIN_GET_RESTAURANTS      = "ADMIN_GET_RESTAURANTS";
+export const ADMIN_VALIDATE_RESTAURANT  = "ADMIN_VALIDATE_RESTAURANT";
+export const ADMIN_REJECT_RESTAURANT    = "ADMIN_REJECT_RESTAURANT";
+export const ADMIN_DELETE_RESTAURANT    = "ADMIN_DELETE_RESTAURANT";

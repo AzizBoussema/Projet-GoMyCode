@@ -46,12 +46,15 @@ export const getVendorOrders = () => async (dispatch) => {
   }
 };
 
-export const updateOrderStatus = (id, status) => async (dispatch) => {
+export const updateOrderStatus = (id, status, cancellationReason = null) => async (dispatch) => {
   dispatch({ type: LOAD_ORDER });
   try {
-    const result = await apiClient.put(`/api/orders/${id}/status`, { status });
+    const body = { status };
+    if (cancellationReason) body.cancellationReason = cancellationReason;
+    const result = await apiClient.put(`/api/orders/${id}/status`, body);
     dispatch({ type: UPDATE_ORDER_STATUS, payload: result.data.data });
   } catch (error) {
+    alert(error.response?.data?.errors?.[0]?.msg || "Erreur lors de la mise à jour du statut.");
     dispatch({ type: FAIL_ORDER, payload: error.response?.data });
   }
 };

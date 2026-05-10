@@ -12,6 +12,15 @@ const RestaurantMenu = () => {
 
   const { restaurant, isLoad: loadRest } = useSelector((state) => state.restaurantReducer);
   const { restaurantProducts, isLoad: loadProd } = useSelector((state) => state.productReducer);
+  const { user } = useSelector((state) => state.authReducer);
+
+  // Vrai si le restaurateur connecté est le propriétaire de CE restaurant
+  const isOwner = user?.role === "restaurant" &&
+    user?.restaurant &&
+    String(user.restaurant._id || user.restaurant) === String(id);
+
+  // Vrai si c'est un restaurateur (même pas propriétaire) : ne peut pas commander
+  const isVendor = user?.role === "restaurant";
 
   useEffect(() => {
     dispatch(getRestaurantById(id));
@@ -74,12 +83,19 @@ const RestaurantMenu = () => {
                     <Link to={`/products/${product._id}`} className="btn btn-outline-dark w-100">
                       Voir
                     </Link>
-                    <button
-                      className="btn btn-danger w-100 fw-bold"
-                      onClick={() => dispatch(addToCart(product))}
-                    >
-                      Ajouter
-                    </button>
+                    {!isVendor && (
+                      <button
+                        className="btn btn-danger w-100 fw-bold"
+                        onClick={() => dispatch(addToCart(product))}
+                      >
+                        Ajouter
+                      </button>
+                    )}
+                    {isOwner && (
+                      <span className="btn btn-outline-secondary w-100 fw-bold disabled" title="Vos propres produits">
+                        Mon produit
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

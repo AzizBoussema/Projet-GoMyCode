@@ -12,9 +12,9 @@ export const getUsers = () => async (dispatch) => {
   dispatch({ type: LOAD_USER });
   try {
     const result = await apiClient.get("/api/users/all");
-    dispatch({ type: GET_ALL_USERS, payload: result.data.listUsers });
+    dispatch({ type: GET_ALL_USERS, payload: result.data.data });
   } catch (error) {
-    dispatch({ type: FAIL_USER, payload: error.response.data.errors });
+    dispatch({ type: FAIL_USER, payload: error.response?.data?.errors });
   }
 };
 
@@ -23,18 +23,18 @@ export const getOneUser = (id) => async (dispatch) => {
   dispatch({ type: LOAD_USER });
   try {
     const result = await apiClient.get(`/api/users/${id}`);
-    dispatch({ type: GET_ONE_USER, payload: result.data.user });
+    dispatch({ type: GET_ONE_USER, payload: result.data.data });
   } catch (error) {
-    dispatch({ type: FAIL_USER, payload: error.response.data.errors });
+    dispatch({ type: FAIL_USER, payload: error.response?.data?.errors });
   }
 };
 export const deleteUser = (id) => async (dispatch) => {
   dispatch({ type: LOAD_USER });
   try {
     const result = await apiClient.delete(`/api/users/${id}`);
-    dispatch({ type: DELETE_USER, payload: result.data.user });
+    dispatch({ type: DELETE_USER, payload: result.data.data?._id });
   } catch (error) {
-    dispatch({ type: FAIL_USER, payload: error.response.data.errors });
+    dispatch({ type: FAIL_USER, payload: error.response?.data?.errors });
   }
 };
 
@@ -45,6 +45,6 @@ export const updateMyProfile = (profileData) => async (dispatch) => {
     const result = await apiClient.put("/api/users/profile/me", profileData);
     dispatch({ type: UPDATE_MY_PROFILE, payload: result.data.data });
   } catch (error) {
-    dispatch({ type: FAIL_USER, payload: error.response.data.errors });
+    dispatch({ type: FAIL_USER, payload: error.response?.data?.errors });
   }
 };

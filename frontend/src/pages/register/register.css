@@ -30,6 +30,51 @@
   border-radius: 1rem;
 }
 
+/* ---- Écran de succès ---- */
+.register-success {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.register-success-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: pop 0.4s ease;
+}
+
+.register-success-msg {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.register-redirect {
+  color: var(--text-muted, #6c757d);
+  font-size: 0.9rem;
+}
+
+/* ---- Bloc d'erreur ---- */
+.register-error {
+  border-radius: 1rem;
+}
+
+.register-error-title {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.register-error-detail {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+@keyframes pop {
+  0%   { transform: scale(0.6); opacity: 0; }
+  80%  { transform: scale(1.1); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
 @media (max-width: 768px) {
   .register-page {
     margin: 1.5rem 1rem;

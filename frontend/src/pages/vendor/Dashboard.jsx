@@ -23,7 +23,16 @@ const Dashboard = () => {
   };
 
   const handleUpdateStatus = (orderId, status) => {
-    dispatch(updateOrderStatus(orderId, status));
+    if (status === "cancelled") {
+      const reason = window.prompt("Veuillez indiquer la raison de l'annulation :");
+      if (!reason || reason.trim() === "") {
+        alert("L'annulation nécessite une raison. Opération annulée.");
+        return;
+      }
+      dispatch(updateOrderStatus(orderId, status, reason.trim()));
+    } else {
+      dispatch(updateOrderStatus(orderId, status));
+    }
   };
 
   if (isLoad || isLoadOrder) {

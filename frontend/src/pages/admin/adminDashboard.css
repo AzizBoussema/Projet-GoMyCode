@@ -1,0 +1,288 @@
+/* ============================================================
+   ADMIN DASHBOARD — Savoryx
+   Compatible dark / light
+   ============================================================ */
+
+.admin-wrapper {
+  color: var(--text);
+}
+
+/* ---- HEADER ---- */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.admin-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+  text-align: left;
+  letter-spacing: -0.03em;
+}
+
+.admin-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---- STATS ---- */
+.admin-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .admin-stats-row { grid-template-columns: 1fr 1fr; }
+}
+
+.admin-stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.admin-stat-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.admin-stat-card.accent {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(255,107,53,0.08), var(--card-bg));
+}
+
+.admin-stat-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.admin-stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  line-height: 1;
+}
+
+.admin-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---- ONGLETS ---- */
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+
+.admin-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-tab-btn:hover {
+  color: var(--text);
+}
+
+.admin-tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.admin-badge {
+  background: var(--primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  line-height: 1.4;
+}
+
+/* ---- SECTION ---- */
+.admin-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 1rem 1.5rem;
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* ---- TABLE ---- */
+.admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.admin-table thead tr {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-table th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text);
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tbody tr:hover td {
+  background: var(--surface);
+}
+
+/* ---- RESTAURANT & USER INFO ---- */
+.admin-restaurant-info,
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-restaurant-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.admin-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.admin-name {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.admin-sub {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ---- PILLS ---- */
+.admin-pill {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.admin-pill.success  { background: rgba(16,185,129,0.15);  color: #059669; }
+.admin-pill.warning  { background: rgba(245,158,11,0.15);  color: #d97706; }
+.admin-pill.danger   { background: rgba(239,68,68,0.15);   color: #dc2626; }
+.admin-pill.info     { background: rgba(99,102,241,0.15);  color: #6366f1; }
+.admin-pill.neutral  { background: var(--surface);         color: var(--text-secondary); border: 1px solid var(--border); }
+
+/* ---- BOUTONS D'ACTION ---- */
+.admin-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.admin-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.admin-btn.success { background: rgba(16,185,129,0.15);  color: #059669; }
+.admin-btn.warning { background: rgba(245,158,11,0.15);  color: #d97706; }
+.admin-btn.danger  { background: rgba(239,68,68,0.15);   color: #dc2626; }
+.admin-btn.info    { background: rgba(99,102,241,0.15);  color: #6366f1; }
+
+/* ---- ÉTATS ---- */
+.admin-empty {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.admin-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}

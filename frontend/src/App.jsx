@@ -28,12 +28,12 @@ const OrderConfirmation = lazy(() => import("./pages/cart/OrderConfirmation"));
 const Dashboard = lazy(() => import("./pages/vendor/Dashboard"));
 const AddFoodItem = lazy(() => import("./pages/vendor/AddFoodItem"));
 const EditFoodItem = lazy(() => import("./pages/vendor/EditFoodItem"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Savoryx UI updated - cache busted!"); // Force reload
     if (localStorage.getItem("token")) {
       dispatch(current());
     }
@@ -61,6 +61,7 @@ function App() {
               <Route path="/vendor/dashboard" element={<ProtectedRoute requiredRole="restaurant"><Dashboard /></ProtectedRoute>} />
               <Route path="/vendor/add-food" element={<ProtectedRoute requiredRole="restaurant"><AddFoodItem /></ProtectedRoute>} />
               <Route path="/vendor/edit-food/:id" element={<ProtectedRoute requiredRole="restaurant"><EditFoodItem /></ProtectedRoute>} />
+              <Route path="/admin/dashboard" element={<ProtectedRoute requiredAdmin><AdminDashboard /></ProtectedRoute>} />
               <Route path="/*" element={<Error />} />
             </Routes>
           </Suspense>

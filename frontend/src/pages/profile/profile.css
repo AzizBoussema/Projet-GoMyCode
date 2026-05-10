@@ -1,0 +1,287 @@
+/* ============================================================
+   PROFILE PAGE — Savoryx
+   Compatible dark / light via variables CSS de App.css
+   ============================================================ */
+
+/* ---- CARTES ---- */
+.profile-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---- AVATAR ---- */
+.profile-avatar-card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.profile-avatar-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.15);
+}
+
+.profile-role-badge {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.3rem 1rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.profile-role-badge.vendor {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.05));
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.profile-role-badge.client {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.profile-role-badge.admin {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(99, 102, 241, 0.06));
+  border-color: #6366f1;
+  color: #6366f1;
+  font-weight: 800;
+}
+
+.profile-username {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0.5rem 0 0.25rem;
+}
+
+.profile-email {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  word-break: break-all;
+}
+
+/* ---- HEADER DE CARTE ---- */
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.profile-card-header h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ---- CORPS DE CARTE ---- */
+.profile-card-body {
+  padding: 1.5rem;
+}
+
+/* ---- TITRE DE SECTION ---- */
+.profile-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+/* ---- GRILLE INFOS (mode lecture) ---- */
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .profile-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.profile-info-item.col-span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 576px) {
+  .profile-info-item.col-span-2 {
+    grid-column: span 1;
+  }
+}
+
+.profile-info-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.profile-info-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.profile-empty-val {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.88rem;
+}
+
+/* ---- FORMULAIRE (mode edition) ---- */
+.profile-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.profile-hint {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* Inputs — surcharge Bootstrap pour le theme */
+.profile-input.form-control {
+  background-color: var(--surface-solid) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-input.form-control::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1;
+}
+
+.profile-input.form-control:focus {
+  background-color: var(--surface-solid) !important;
+  color: var(--text) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.18) !important;
+  outline: none;
+}
+
+textarea.profile-input.form-control {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ---- LISTE DES COMMANDES ---- */
+.profile-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-order-item:hover {
+  background: var(--surface-solid);
+  border-color: var(--border-focus);
+}
+
+.profile-order-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.profile-order-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.profile-order-id {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.profile-order-restaurant {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.profile-order-total {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.profile-order-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.profile-status-badge {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  font-weight: 600;
+}
+
+/* ---- ETATS VIDES / CHARGEMENT ---- */
+.profile-empty,
+.profile-loading {
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}

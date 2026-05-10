@@ -166,6 +166,27 @@
   /* Cutout effect */
 }
 
+/* Lien Admin dans la Navbar */
+.nav-admin {
+  font-weight: 700 !important;
+  color: var(--primary) !important;
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem !important;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-admin:hover {
+  background: rgba(255, 107, 53, 0.2) !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+  color: var(--primary) !important;
+}
+
+.nav-admin::after {
+  display: none !important;
+}
+
 @keyframes bounceCart {
 
   0%,

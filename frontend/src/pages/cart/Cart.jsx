@@ -47,6 +47,11 @@ const Cart = () => {
       return;
     }
 
+    if (user.role === "restaurant") {
+      alert("Les restaurateurs ne peuvent pas passer de commande.");
+      return;
+    }
+
     if (items.length === 0) {
       alert("Votre panier est vide");
       return;
@@ -185,15 +190,24 @@ const Cart = () => {
               <button
                 className="btn btn-premium w-100 py-3"
                 onClick={triggerCheckout}
-                disabled={!user._id}
+                disabled={!user._id || user.role === "restaurant"}
               >
-                {user._id ? "Passer la commande" : "Connexion requise"}
+                {!user._id
+                  ? "Connexion requise"
+                  : user.role === "restaurant"
+                  ? "🚫 Réservé aux clients"
+                  : "Passer la commande"}
               </button>
 
               {!user._id && (
                 <Link to="/login" className="btn btn-outline-secondary w-100 mt-3 rounded-pill py-2">
                   Se connecter
                 </Link>
+              )}
+              {user.role === "restaurant" && (
+                <p className="text-muted text-center small mt-2 mb-0">
+                  Les restaurateurs ne peuvent pas passer de commandes.
+                </p>
               )}
             </div>
           </div>

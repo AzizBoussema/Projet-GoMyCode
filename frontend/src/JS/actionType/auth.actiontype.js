@@ -9,3 +9,5 @@ export const FAIL_AUTH = "FAIL_AUTH";
 export const CURRENT_AUTH = "CURRENT_AUTH";
 //logout : se déconnecter
 export const LOGOUT_AUTH = "LOGOUT_AUTH";
+// Nettoyage des erreurs (utilisé au montage/démontage des formulaires)
+export const CLEAR_AUTH_ERRORS = "CLEAR_AUTH_ERRORS";

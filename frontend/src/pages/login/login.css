@@ -1,0 +1,84 @@
+/* ============================================================
+   LOGIN PAGE — Savoryx
+   Compatible dark / light
+   ============================================================ */
+
+.login-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 440px;
+}
+
+.login-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  text-align: left;
+  margin: 0 0 0.3rem;
+  letter-spacing: -0.03em;
+}
+
+.login-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.login-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+/* Surcharge Bootstrap inputs */
+.login-card .form-control {
+  background-color: var(--surface-solid) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  padding: 0.6rem 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-card .form-control::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1;
+}
+
+.login-card .form-control:focus {
+  background-color: var(--surface-solid) !important;
+  color: var(--text) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.18) !important;
+  outline: none;
+}
+
+.login-register-link {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.login-register-link a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-register-link a:hover {
+  text-decoration: underline;
+}

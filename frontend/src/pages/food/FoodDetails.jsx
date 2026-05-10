@@ -9,14 +9,24 @@ const FoodDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { product, isLoad } = useSelector((state) => state.productReducer);
+  const { user } = useSelector((state) => state.authReducer);
+
+  // Vérifier si le produit appartient au restaurant du restaurateur connecté
+  const myRestaurantId = user?.role === "restaurant"
+    ? String(user.restaurant?._id || user.restaurant || "")
+    : null;
+  const productRestaurantId = String(product?.restaurantId?._id || product?.restaurantId || "");
+  const isOwnProduct = myRestaurantId && productRestaurantId === myRestaurantId;
+  const isVendor = user?.role === "restaurant";
 
   useEffect(() => {
     dispatch(getOneProduct(id));
   }, [dispatch, id]);
 
   const handleAddToCart = () => {
+    if (isVendor) return;
     dispatch(addToCart(product, 1));
-    alert("Produit ajoute au panier.");
+    alert("Produit ajouté au panier.");
   };
 
   if (isLoad) {
@@ -45,15 +55,27 @@ const FoodDetails = () => {
           <p className="lead">{product.description}</p>
           <h3 className="text-success">{product.price} DT</h3>
           <div className="mt-4">
-            <button
-              className="btn btn-success btn-lg me-3"
-              onClick={handleAddToCart}
-            >
-              Ajouter au panier
-            </button>
-            <Link to="/cart" className="btn btn-outline-primary btn-lg">
-              Voir le panier
-            </Link>
+            {isOwnProduct ? (
+              <span className="btn btn-outline-secondary btn-lg me-3 disabled">
+                🏦 Votre produit
+              </span>
+            ) : isVendor ? (
+              <span className="btn btn-outline-secondary btn-lg me-3 disabled" title="Les restaurateurs ne peuvent pas commander">
+                🚫 Commande non disponible
+              </span>
+            ) : (
+              <button
+                className="btn btn-success btn-lg me-3"
+                onClick={handleAddToCart}
+              >
+                Ajouter au panier
+              </button>
+            )}
+            {!isVendor && (
+              <Link to="/cart" className="btn btn-outline-primary btn-lg">
+                Voir le panier
+              </Link>
+            )}
           </div>
           <div className="mt-3">
             <Link to="/products" className="btn btn-secondary">

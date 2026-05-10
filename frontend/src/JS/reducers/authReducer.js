@@ -4,6 +4,7 @@ import {
   LOAD_AUTH,
   LOGOUT_AUTH,
   SUCCESS_AUTH,
+  CLEAR_AUTH_ERRORS,
 } from "../actionType/auth.actiontype";
 import { UPDATE_MY_PROFILE } from "../actionType/users.actiontype";
 
@@ -30,7 +31,7 @@ const authReducer = (state = initialState, { type, payload }) => {
         isAuth: true,
       };
     case FAIL_AUTH:
-      return { ...state, isLoad: false, errors: payload };
+      return { ...state, isLoad: false, errors: payload || null };
     case CURRENT_AUTH:
       return {
         ...state,
@@ -46,6 +47,8 @@ const authReducer = (state = initialState, { type, payload }) => {
         user: payload,
         errors: null,
       };
+    case CLEAR_AUTH_ERRORS:
+      return { ...state, errors: null, success: null, isLoad: false };
     case LOGOUT_AUTH:
       localStorage.removeItem("token");
       return initialState;

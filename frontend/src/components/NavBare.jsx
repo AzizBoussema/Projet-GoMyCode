@@ -81,7 +81,7 @@ const NavBare = () => {
             >
               {theme === "light" ? <FaMoon /> : <FaSun />}
             </button>
-            {isAuth ? (
+                        {isAuth ? (
               <>
                 <Nav.Link as={Link} to="/profile" className="nav-item">
                   Profil
@@ -89,6 +89,11 @@ const NavBare = () => {
                 {user.role === "restaurant" && (
                   <Nav.Link as={Link} to="/vendor/dashboard" className="nav-item">
                     Dashboard
+                  </Nav.Link>
+                )}
+                {user.isAdmin && (
+                  <Nav.Link as={Link} to="/admin/dashboard" className="nav-item nav-admin">
+                    🛡️ Admin
                   </Nav.Link>
                 )}
                 <Nav.Link

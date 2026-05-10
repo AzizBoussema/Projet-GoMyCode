@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import { useLocation, Link, Navigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import "./orderConfirmation.css";
 
 const OrderConfirmation = () => {
@@ -14,21 +12,11 @@ const OrderConfirmation = () => {
 
   return (
     <div className="container mt-5 mb-5 d-flex justify-content-center">
-      <motion.div
-        className="order-receipt-card"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
+      <div className="order-receipt-card order-receipt-anim">
         <div className="receipt-header">
-          <motion.div
-            className="success-checkmark-wrapper"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-          >
+          <div className="success-checkmark-wrapper">
             <i className="fa fa-check checkmark-icon"></i>
-          </motion.div>
+          </div>
           <h2 className="mt-3 fw-bold text-dark m-0">Commande Confirmée !</h2>
           <p className="text-muted mt-2">Votre commande a bien été reçue et transmise au restaurant.</p>
         </div>
@@ -94,7 +82,7 @@ const OrderConfirmation = () => {
             </Link>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
